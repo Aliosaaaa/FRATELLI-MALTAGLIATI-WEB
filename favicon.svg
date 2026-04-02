@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Corpo della castagna -->
+  <ellipse cx="32" cy="38" rx="20" ry="18" fill="#5C3A21"/>
+  <!-- Parte chiara in basso (ventre della castagna) -->
+  <ellipse cx="32" cy="50" rx="12" ry="7" fill="#C8A97E"/>
+  <!-- Luccichio sulla castagna -->
+  <ellipse cx="26" cy="30" rx="5" ry="3.5" fill="#7A5030" opacity="0.6" transform="rotate(-20 26 30)"/>
+  <!-- Riccio / cappuccio verde in cima -->
+  <path d="M18 28 Q20 14 32 12 Q44 14 46 28 Q40 22 32 22 Q24 22 18 28Z" fill="#2F4F3E"/>
+  <!-- Dettaglio riccio -->
+  <path d="M22 26 Q24 16 32 14 Q28 20 22 26Z" fill="#1E3328" opacity="0.5"/>
+  <path d="M42 26 Q40 16 32 14 Q36 20 42 26Z" fill="#1E3328" opacity="0.5"/>
+  <!-- Picciolo -->
+  <rect x="30" y="10" width="4" height="6" rx="2" fill="#3D2B10"/>
+</svg>
