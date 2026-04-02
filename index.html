@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fratelli Maltagliati | Farina di Castagne Tradizionale e Recupero Boschi</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Farina di castagne come una volta. Prodotta da castagneti recuperati con metodi tradizionali, essiccazione lenta e macinatura a pietra. Scopri il gusto dell'autenticità.">
+    <meta name="keywords" content="farina di castagne, castagneti recuperati, agricoltura tradizionale, macinatura a pietra, prodotti tipici toscani">
+    <meta property="og:title" content="Fratelli Maltagliati | Farina di Castagne come una volta">
+    <meta property="og:description" content="Sosteniamo il territorio recuperando castagneti abbandonati per offrirti una farina autentica e genuina.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1508612761958-e931d843bdd5?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --chestnut-brown: #5C3A21;
+            --forest-green: #2F4F3E;
+            --warm-beige: #E8DCC3;
+            --burnt-orange: #C26A2E;
+            --cream-white: #F5F1E8;
+            --text-dark: #333333;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--chestnut-brown);
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--chestnut-brown);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--burnt-orange);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--chestnut-brown);
+            border-radius: 2px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: white;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--burnt-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(194, 106, 46, 0.3);
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .btn:hover {
+            background-color: var(--chestnut-brown);
+            transform: translateY(-3px);
+        }
+
+        /* --- Section Common --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--burnt-orange);
+            margin: 0 auto;
+        }
+
+        /* --- Chi Siamo --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            /* Nuova immagine di due agricoltori */
+            background: url('https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&q=80&w=800') center center/cover;
+            border-radius: 15px;
+            box-shadow: 20px 20px 0 var(--warm-beige);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- Servizi/Metodo --- */
+        .services {
+            background-color: var(--warm-beige);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--cream-white);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(92, 58, 33, 0.1);
+        }
+
+        .service-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            background-color: rgba(194, 106, 46, 0.1);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            color: var(--burnt-orange);
+        }
+        
+        .service-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* --- Testimonianze --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-left: 5px solid var(--burnt-orange);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--forest-green);
+        }
+
+        /* --- Final CTA --- */
+        .final-cta {
+            background: var(--forest-green);
+            color: white;
+            text-align: center;
+            padding: 80px 10%;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--chestnut-brown);
+            color: var(--warm-beige);
+            padding: 50px 10% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--warm-beige);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(232, 220, 195, 0.1);
+            font-size: 0.8rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                height: 350px;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--cream-white);
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.mobile-active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Maltagliati</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#chi-siamo">La Nostra Storia</a></li>
+            <li><a href="#metodo">Il Metodo</a></li>
+            <li><a href="#prodotti">Prodotti</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>Farina di Castagne come una volta</h1>
+        <p>Recuperiamo castagneti abbandonati per portare sulla tua tavola l'autentico sapore della tradizione toscana.</p>
+        <a href="#prodotti" class="btn">Scopri la nostra farina</a>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo">
+        <div class="about-container">
+            <div class="about-image reveal"></div>
+            <div class="about-text reveal">
+                <div class="section-title" style="text-align: left;">
+                    <h2>Passione e Territorio</h2>
+                    <div class="underline" style="margin: 0;"></div>
+                </div>
+                <h3>Siamo i Fratelli Maltagliati</h3>
+                <p>La nostra avventura nasce dal desiderio di non veder morire i nostri boschi. Abbiamo preso in gestione ettari di castagneti secolari che erano stati lasciati all'oblio.</p>
+                <p>Non è solo agricoltura, è un atto di amore verso la nostra terra. Ogni sacchetto della nostra farina racchiude la fatica del recupero, la brezza della montagna e il calore dei metodi tradizionali.</p>
+                <p><em>"La nostra farina sa di quella che si mangiava una volta."</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodo Section -->
+    <section class="services" id="metodo">
+        <div class="section-title reveal">
+            <h2>Il Nostro Metodo</h2>
+            <div class="underline"></div>
+            <p style="margin-top: 1rem;">Processi lenti e naturali per una qualità senza compromessi.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i data-lucide="tree-pine"></i>
+                </div>
+                <h3>Recupero Attivo</h3>
+                <p>Ripuliamo e curiamo castagneti abbandonati, ridando vita a piante che hanno centinaia di anni.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i data-lucide="flame"></i>
+                </div>
+                <h3>Essiccazione Lenta</h3>
+                <p>Usiamo il "Metato" tradizionale: 40 giorni di calore costante alimentato solo da legna di castagno.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <i data-lucide="cog"></i>
+                </div>
+                <h3>Macinatura a Pietra</h3>
+                <p>La farina viene prodotta lentamente con macine in pietra per preservare aromi e proprietà nutritive.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonianze">
+        <div class="section-title reveal">
+            <h2>Dicono di Noi</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <p>"Ho ritrovato il sapore dei dolci che faceva mia nonna. Una consistenza e una dolcezza naturale che non si trova nei prodotti industriali."</p>
+                <div class="testimonial-author">Maria R., Lucca</div>
+            </div>
+            <div class="testimonial-card reveal">
+                <p>"Incredibile il lavoro che stanno facendo per il bosco. Comprare la loro farina significa sostenere il nostro territorio."</p>
+                <div class="testimonial-author">Giuseppe V., Pescia</div>
+            </div>
+            <div class="testimonial-card reveal">
+                <p>"Qualità eccellente. Si sente che c'è il cuore in quello che fanno i fratelli Maltagliati."</p>
+                <div class="testimonial-author">Elena M., Ristoratrice</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Finale -->
+    <section class="final-cta reveal" id="prodotti">
+        <h2>Porta la Tradizione in Cucina</h2>
+        <p>Disponibile in confezioni da 500g e 1kg. Spediamo in tutta Italia o puoi venirci a trovare al mulino.</p>
+        <a href="https://wa.me/391234567890" class="btn">Contattaci su WhatsApp</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contatti">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: block;">Maltagliati</a>
+                <p>Azienda Agricola Fratelli Maltagliati<br>Via dei Castagni, Toscana, Italia</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Utili</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#chi-siamo">Storia</a></li>
+                    <li><a href="#metodo">Metodo</a></li>
+                    <li><a href="#prodotti">Prodotti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contatti</h4>
+                <ul class="footer-links">
+                    <li>📞 +39 0583 123456</li>
+                    <li>📱 +39 333 1234567</li>
+                    <li>✉️ info@farinalibera.it</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Seguici</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Azienda Agricola Fratelli Maltagliati. Tutti i diritti riservati. <br>
+            P.IVA 01234567890 | Design con ❤️ per il territorio.
+        </div>
+    </footer>
+
+    <script>
+        // Inizializza le icone Lucide
+        lucide.createIcons();
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+
+        // Chiudi menu al click su un link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Esegui una volta al caricamento
+        window.onload = reveal;
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.8rem 5%';
+                nav.style.background = 'rgba(245, 241, 232, 0.98)';
+            } else {
+                nav.style.padding = '1.5rem 5%';
+                nav.style.background = 'rgba(245, 241, 232, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
